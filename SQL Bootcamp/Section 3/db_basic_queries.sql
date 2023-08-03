@@ -13,6 +13,11 @@ DROP TABLE tbl_clube;
 DROP TABLE tbl_time;
 DROP TABLE tbl_comissao_tecnica;
 
+-- limpando tabelas
+DELETE FROM tbl_clube;
+DELETE FROM tbl_time;
+DELETE FROM tbl_comissao_tecnica;
+
 -- ordenando clubes pela classificação
 SELECT * FROM tbl_clube
 ORDER BY PosicaoAtual ASC;
