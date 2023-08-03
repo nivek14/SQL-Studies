@@ -18,21 +18,25 @@ CONSTRAINT pk_id_time PRIMARY KEY (Idclube)
 
 CREATE TABLE tbl_time(
 IdJogador SMALLINT AUTO_INCREMENT,
+Idclube SMALLINT,
 Nomejogador varchar(60) NOT NULL,
 SobrenomeJogador VARCHAR(60) NOT NULL,
 PosicaoJogador varchar(15),
 NumeroCamisa TINYINT NOT NULL,
 Assistencias SMALLINT,
 Gols SMALLINT,
-CONSTRAINT pk_id_jogador PRIMARY KEY (IdJogador)
+CONSTRAINT pk_id_jogador PRIMARY KEY (IdJogador),
+CONSTRAINT fk_clube FOREIGN KEY (Idclube) REFERENCES tbl_clube(Idclube)
 );
 
 CREATE TABLE tbl_comissao_tecnica(
 IdMembro SMALLINT AUTO_INCREMENT,
+Idclube SMALLINT,
 NomeMembro varchar(60) NOT NULL,
 SobrenomeMembro VARCHAR(60) NOT NULL,
 Cargo VARCHAR(60) NOT NULL,
-CONSTRAINT pk_id_jogador PRIMARY KEY (IdMembro)
+CONSTRAINT pk_id_jogador PRIMARY KEY (IdMembro),
+CONSTRAINT fk_clube FOREIGN KEY (Idclube) REFERENCES tbl_clube(Idclube)
 );
 
 
